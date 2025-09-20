@@ -36,17 +36,31 @@ export const IndexUI = ({ logic }: IndexUIProps) => {
     <EcommerceTemplate 
       showCart={true}
     >
-      {/* Hero Section */}
-      <section className="hero-gradient py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section with Background Image */}
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=800&fit=crop&crop=center)'
+          }}
+        >
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
             <div className="flex justify-center mb-6">
-              <Home className="h-16 w-16 text-primary" />
+              <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full">
+                <Home className="h-16 w-16 text-white" />
+              </div>
             </div>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
               Tu Hogar, Tu Estilo
             </h1>
-            <p className="text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl lg:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
               Descubre nuestra colección de artículos para el hogar que combinan funcionalidad, 
               calidad y diseño para crear espacios únicos y acogedores.
             </p>
@@ -59,32 +73,32 @@ export const IndexUI = ({ logic }: IndexUIProps) => {
                 placeholder="Buscar productos para tu hogar..." 
                 value={searchTerm} 
                 onChange={(e) => setSearchTerm(e.target.value)} 
-                className="pl-12 h-14 text-lg bg-white/90 backdrop-blur-sm border-2 border-primary/20 focus:border-primary/40"
+                className="pl-12 h-14 text-lg bg-white/95 backdrop-blur-sm border-2 border-white/30 focus:border-white/60 shadow-lg"
               />
             </div>
 
             {/* Features */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="flex flex-col items-center text-center">
-                <div className="bg-primary/10 p-4 rounded-full mb-4">
-                  <Truck className="h-8 w-8 text-primary" />
+                <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full mb-4">
+                  <Truck className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Envío Gratis</h3>
-                <p className="text-muted-foreground">En compras superiores a $50</p>
+                <h3 className="font-semibold text-lg mb-2 text-white drop-shadow-md">Envío Gratis</h3>
+                <p className="text-white/80 drop-shadow-sm">En compras superiores a $50</p>
               </div>
               <div className="flex flex-col items-center text-center">
-                <div className="bg-primary/10 p-4 rounded-full mb-4">
-                  <Shield className="h-8 w-8 text-primary" />
+                <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full mb-4">
+                  <Shield className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Garantía Total</h3>
-                <p className="text-muted-foreground">30 días de devolución</p>
+                <h3 className="font-semibold text-lg mb-2 text-white drop-shadow-md">Garantía Total</h3>
+                <p className="text-white/80 drop-shadow-sm">30 días de devolución</p>
               </div>
               <div className="flex flex-col items-center text-center">
-                <div className="bg-primary/10 p-4 rounded-full mb-4">
-                  <Sparkles className="h-8 w-8 text-primary" />
+                <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full mb-4">
+                  <Sparkles className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Calidad Premium</h3>
-                <p className="text-muted-foreground">Productos seleccionados</p>
+                <h3 className="font-semibold text-lg mb-2 text-white drop-shadow-md">Calidad Premium</h3>
+                <p className="text-white/80 drop-shadow-sm">Productos seleccionados</p>
               </div>
             </div>
           </div>
